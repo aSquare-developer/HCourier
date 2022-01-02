@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Address {
+struct Address: Decodable {
     let street: String
     let houseNumber: String
     let apartamentNumber: String?
-    let doorcode: String
+    let doorCode: String
     let description: String?
     
     var fullAddress: String {
@@ -22,7 +22,7 @@ struct Address {
         case street
         case houseNumber = "house_number"
         case apartamentNumber = "appartment_number"
-        case doorcode
+        case doorCode = "doorcode"
         case description
     }
 }
