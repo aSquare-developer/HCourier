@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Addresses-->
         <scene sceneID="EfT-DD-tzX">
             <objects>
                 <tableViewController id="WmY-gJ-9BE" customClass="MainTableViewController" customModule="HCourier" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="WmY-gJ-9BE" id="J70-V9-YNd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wNH-Dv-be8"/>
+                    <navigationItem key="navigationItem" title="Addresses" id="wNH-Dv-be8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fta-gL-yKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,8 +41,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o80-IA-IGH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vaY-Wr-8rF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vaY-Wr-8rF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

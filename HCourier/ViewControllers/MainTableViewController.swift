@@ -25,7 +25,6 @@ class MainTableViewController: UITableViewController {
     // MARK: - Ovveride Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupSearchController()
         fetchData(from: Link.apiLink.rawValue)
     }
@@ -37,6 +36,7 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = .none
         var address: Address
         
         if isFiltering {
@@ -54,22 +54,15 @@ class MainTableViewController: UITableViewController {
     }
     
     // MARK: - Private Methods
-    private func setupNavigationBar() {
-        title = "Addresses"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
-//        searchController.searchBar.barTintColor = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             textField.font = UIFont.boldSystemFont(ofSize: 17)
-//            textField.textColor = .black
         }
     }
     
@@ -87,7 +80,7 @@ class MainTableViewController: UITableViewController {
 
 }
 
-// MARK: - UISearchR
+// MARK: - UISearchResultsUpdating
 extension MainTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text ?? "")
