@@ -19,7 +19,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with completion: @escaping(Result<[Address], NetworkError>) -> Void) {
+    func fetchData(from url: String?, with completion: @escaping(Result<[AddressData], NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -30,7 +30,7 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let addresses = try decoder.decode([Address].self, from: data)
+                let addresses = try decoder.decode([AddressData].self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(addresses))
                 }

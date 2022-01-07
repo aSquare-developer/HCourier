@@ -12,10 +12,13 @@
 		75D5CCBE2781F6DB00C4204C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D5CCBC2781F6DB00C4204C /* Main.storyboard */; };
 		75D5CCC02781F6DD00C4204C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D5CCBF2781F6DD00C4204C /* Assets.xcassets */; };
 		75D5CCC32781F6DD00C4204C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D5CCC12781F6DD00C4204C /* LaunchScreen.storyboard */; };
-		75D5CCD12781F77700C4204C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD02781F77700C4204C /* Address.swift */; };
+		75D5CCD12781F77700C4204C /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD02781F77700C4204C /* AddressData.swift */; };
 		75D5CCD32781F85C00C4204C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD22781F85C00C4204C /* NetworkManager.swift */; };
 		75D5CCD5278226AE00C4204C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD4278226AE00C4204C /* MainTableViewController.swift */; };
 		75D5CCD827822F2D00C4204C /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD727822F2D00C4204C /* UIViewController + Alerts.swift */; };
+		75D5CCDA2784F2AA00C4204C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCD92784F2A900C4204C /* CustomTableViewCell.swift */; };
+		75D5CD002784F90A00C4204C /* Address.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CCFE2784F90A00C4204C /* Address.xcdatamodeld */; };
+		75D5CD022784FBA000C4204C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5CD012784FBA000C4204C /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +29,13 @@
 		75D5CCBF2781F6DD00C4204C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75D5CCC22781F6DD00C4204C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75D5CCC42781F6DD00C4204C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75D5CCD02781F77700C4204C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		75D5CCD02781F77700C4204C /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
 		75D5CCD22781F85C00C4204C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		75D5CCD4278226AE00C4204C /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		75D5CCD727822F2D00C4204C /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
+		75D5CCD92784F2A900C4204C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		75D5CCFF2784F90A00C4204C /* Address.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Address.xcdatamodel; sourceTree = "<group>"; };
+		75D5CD012784FBA000C4204C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				75D5CCD62782297000C4204C /* Extensions */,
 				75D5CCCA2781F6F000C4204C /* App */,
 				75D5CCCC2781F72A00C4204C /* Resources */,
+				75D5CCFE2784F90A00C4204C /* Address.xcdatamodeld */,
 			);
 			path = HCourier;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				75D5CCD4278226AE00C4204C /* MainTableViewController.swift */,
+				75D5CCD92784F2A900C4204C /* CustomTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,7 +119,7 @@
 		75D5CCCE2781F73D00C4204C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				75D5CCD02781F77700C4204C /* Address.swift */,
+				75D5CCD02781F77700C4204C /* AddressData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				75D5CCD22781F85C00C4204C /* NetworkManager.swift */,
+				75D5CD012784FBA000C4204C /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -205,7 +214,10 @@
 			files = (
 				75D5CCB72781F6DB00C4204C /* AppDelegate.swift in Sources */,
 				75D5CCD32781F85C00C4204C /* NetworkManager.swift in Sources */,
-				75D5CCD12781F77700C4204C /* Address.swift in Sources */,
+				75D5CD002784F90A00C4204C /* Address.xcdatamodeld in Sources */,
+				75D5CD022784FBA000C4204C /* StorageManager.swift in Sources */,
+				75D5CCD12781F77700C4204C /* AddressData.swift in Sources */,
+				75D5CCDA2784F2AA00C4204C /* CustomTableViewCell.swift in Sources */,
 				75D5CCD5278226AE00C4204C /* MainTableViewController.swift in Sources */,
 				75D5CCB92781F6DB00C4204C /* SceneDelegate.swift in Sources */,
 				75D5CCD827822F2D00C4204C /* UIViewController + Alerts.swift in Sources */,
@@ -430,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		75D5CCFE2784F90A00C4204C /* Address.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75D5CCFF2784F90A00C4204C /* Address.xcdatamodel */,
+			);
+			currentVersion = 75D5CCFF2784F90A00C4204C /* Address.xcdatamodel */;
+			path = Address.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 75D5CCAB2781F6DB00C4204C /* Project object */;
 }

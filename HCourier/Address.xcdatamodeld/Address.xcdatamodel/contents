@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
+        <attribute name="apartamentNumber" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="doorCode" optional="YES" attributeType="String"/>
+        <attribute name="houseNumber" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Address" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
