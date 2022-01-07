@@ -97,8 +97,9 @@ class MainTableViewController: UITableViewController {
             switch result {
             case .success(let address):
                 self.addresses = address
+                self.tableView.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
+                self.customAlert(withTitle: "Error!", withMessage: error.localizedDescription)
             }
         })
     }
@@ -116,7 +117,8 @@ extension MainTableViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         filteredAddress = addresses.filter { address in
-            address.street!.lowercased().contains(searchText.lowercased())
+            guard let street = address.street else { return false }
+            return street.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
