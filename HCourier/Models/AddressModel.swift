@@ -1,5 +1,5 @@
 //
-//  AddressData.swift
+//  AddressModel.swift
 //  HCourier
 //
 //  Created by Artur Anissimov on 02.01.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AddressData: Decodable {
+struct AddressModel: Decodable {
     let street: String
     let houseNumber: String
     let apartamentNumber: String?

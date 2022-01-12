@@ -12,7 +12,7 @@ class MainTableViewController: UITableViewController {
     // MARK: - Private Methods
     private var addresses: [Address] = []
     
-    private var newAddresses: [AddressData] = [] {
+    private var newAddresses: [AddressModel] = [] {
         didSet {
             StorageManager.shared.deleteAllAddresses()
             
@@ -75,9 +75,9 @@ class MainTableViewController: UITableViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            textField.font = UIFont.boldSystemFont(ofSize: 17)
-        }
+//        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+//            textField.font = UIFont.boldSystemFont(ofSize: 17)
+//        }
     }
     
     private func getDataFromServer(from url: String) {
@@ -104,7 +104,7 @@ class MainTableViewController: UITableViewController {
         })
     }
     
-    private func addAddressesToCoreData(_ addresses: [AddressData]) {
+    private func addAddressesToCoreData(_ addresses: [AddressModel]) {
         StorageManager.shared.addAddressesToCoreData(from: addresses)
     }
 }
@@ -118,7 +118,9 @@ extension MainTableViewController: UISearchResultsUpdating {
     private func filterContentForSearchText(_ searchText: String) {
         filteredAddress = addresses.filter { address in
             guard let street = address.street else { return false }
-            return street.lowercased().contains(searchText.lowercased())
+            guard let houseNumber = address.houseNumber else { return false }
+            let fullAddress = "\(street) \(houseNumber)"
+            return fullAddress.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()

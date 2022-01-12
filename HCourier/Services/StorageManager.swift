@@ -29,7 +29,7 @@ class StorageManager {
         }
     }
     
-    func addAddressesToCoreData(from data: [AddressData]) {
+    func addAddressesToCoreData(from data: [AddressModel]) {
         data.forEach { address in
             guard let entity = NSEntityDescription.entity(forEntityName: "Address", in: viewContext) else { return}
             let newAddress = NSManagedObject(entity: entity, insertInto: viewContext)
